@@ -7,6 +7,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+.idea/
 .Python
 build/
 develop-eggs/
@@ -15,8 +16,10 @@ downloads/
 eggs/
 .eggs/
 lib/
+Lib/
 lib64/
 parts/
+Scripts/
 sdist/
 var/
 wheels/
@@ -120,6 +123,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+pyvenv.cfg
 .env
 .venv
 env/
