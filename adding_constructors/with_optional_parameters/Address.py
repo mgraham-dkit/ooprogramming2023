@@ -1,13 +1,4 @@
 class Address:
-    house_label = "House name/number"
-    line1 = "Line 1"
-    line2 = "Line 2"
-    line3 = "Line 3"
-    city = "City"
-    state = "State"
-    postcode = "Postcode"
-    country = "Country"
-
     '''
         Parameterised constructor that contains TWO optional parameters:
             line2 is given a default value of "Line 2" in the constructor signature
