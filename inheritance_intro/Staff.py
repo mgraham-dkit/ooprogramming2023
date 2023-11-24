@@ -16,3 +16,17 @@ class Staff(Person):
 
     def __repr__(self):
         return f"Staff[name={self.name}, id={self.id}, address={self.address}, start_date={self.start_date}, dept={self.dept}"
+
+    def __eq__(self, other):
+        if not isinstance(other, Staff):
+            return NotImplemented
+
+        if not super().__eq__(other):
+            return False
+        if self.dept != other.dept:
+            return False
+
+        return True
+
+    def __hash__(self):
+        return hash((super(), self.id, self.name, self.address, self.start_date))

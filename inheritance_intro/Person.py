@@ -13,5 +13,23 @@ class Person:
         else:
             self.start_date = dt.datetime.now()
 
+    def __eq__(self, other):
+        if not isinstance(other, Person):
+            return NotImplemented
+
+        if self.id != other.id:
+            return False
+        if self.name != other.name:
+            return False
+        if self.address != other.address:
+            return False
+        if self.start_date != other.start_date:
+            return False
+
+        return True
+
+    def __hash__(self):
+        return hash((self.id, self.name, self.address, self.start_date))
+
     def display(self):
         print(f"Person[name={self.name}, id={self.id}, address={self.address}, start_date={self.start_date}]")
