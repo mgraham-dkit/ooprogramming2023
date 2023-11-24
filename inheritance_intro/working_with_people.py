@@ -45,6 +45,7 @@ people.append(staff3)
 people.append(a1)
 people.append(na1)
 
+print(people)
 display_people(people)
 
 print("Hello")

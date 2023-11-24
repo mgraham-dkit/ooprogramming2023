@@ -1,9 +1,17 @@
+import datetime as dt
 class Person:
+    date_format = "%d/%m/%Y"
+
     def __init__(self, name, id, address, start_date):
         self.name = name
         self.id = id
         self.address = address
-        self.start_date = start_date
+        if isinstance(start_date, str):
+            self.start_date = dt.datetime.strptime(start_date, Person.date_format)
+        elif isinstance(start_date, dt.date):
+            self.start_date = start_date
+        else:
+            self.start_date = dt.datetime.now()
 
     def display(self):
-        print(f"Person[name={self.name}, id={self.id}, address={self.address}, start_date={self.start_date}")
+        print(f"Person[name={self.name}, id={self.id}, address={self.address}, start_date={self.start_date}]")

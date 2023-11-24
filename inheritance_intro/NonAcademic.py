@@ -11,3 +11,6 @@ class NonAcademic(Staff):
     def display(self):
         print(
             f"Staff[name={self.name}, id={self.id}, address={self.address}, start_date={self.start_date}, dept={self.dept}, parttime={self.parttime}, role={self.role}")
+
+    def calc_wage(self):
+        return super().calc_wage() * 1.1
