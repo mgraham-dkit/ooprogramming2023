@@ -14,8 +14,18 @@ class Staff(Person):
         num_days = (now - self.start_date).days
         return num_days * 5
 
+    def __str__(self):
+        return f"{self.id}: {self.name} works in {self.dept} (started on {self.start_date}) and lives at {self.address}"
+
     def __repr__(self):
         return f"Staff[name={self.name}, id={self.id}, address={self.address}, start_date={self.start_date}, dept={self.dept}"
+
+    def __format__(self, format_spec):
+        match format_spec.lower():
+            case "short":
+                return f"{self.id}: {self.name} works in {self.dept}"
+            case "long":
+                return self.__str__(self)
 
     def __eq__(self, other):
         if not isinstance(other, Staff):
