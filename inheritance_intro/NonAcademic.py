@@ -29,4 +29,4 @@ class NonAcademic(Staff):
         return True
 
     def __hash__(self):
-        return hash((super(), self.id, self.name, self.address, self.start_date))
+        return hash((super(), self.parttime, self.role))
