@@ -32,15 +32,7 @@ class Vehicle:
     def __lt__(self, other):
         if not isinstance(other, Vehicle):
             return NotImplemented
-        elif self.make == other.make:
-            if self.colour < other.colour:
-                return True
-            else:
-                return False
-        elif self.make < other.make:
-            return True
-        else:
-            return False
+        return self.make < other.make
 
     def __gt__(self, other):
         if not isinstance(other, Vehicle):
@@ -80,6 +72,7 @@ class Vehicle:
             return True
         else:
             return False
+
 
 class Car(Vehicle):
     def __init__(self, model, engine_power, is_manual):
