@@ -1,3 +1,4 @@
+import logging
 from products import Product
 from products import Book
 
@@ -18,13 +19,13 @@ def load(file):
             try:
                 id = components[component_count]
                 component_count += 1
-                name = components[2]
+                name = components[component_count]
                 component_count += 1
-                cost_price = float(components[3])
+                cost_price = float(components[component_count])
                 component_count += 1
-                retail_price = float(components[4])
+                retail_price = float(components[component_count])
                 component_count += 1
-                quantity = int(components[5])
+                quantity = int(components[component_count])
                 component_count += 1
 
                 if components[0] == "Book":
@@ -51,6 +52,19 @@ def load(file):
 
 
 # Add logger configuration/set up
+# Create a file handler and link it to a specific file
+log_file = logging.FileHandler(filename="log_file.txt", mode="a")
+# Set the level at which the handler is going to listen
+log_file.setLevel(logging.WARNING)
+# Set up the logger's details:
+    # Handler to use
+    # Level at which it will listen
+    # Format of each log message
+logging.basicConfig(level=logging.INFO, handlers=[log_file],
+                    format='%(asctime)s :: %(levelname)s : %(message)s')
+
+# Get dedicated logger for this program
+logger = logging.getLogger("main")
 
 invalid_file = True
 while invalid_file:
@@ -63,6 +77,7 @@ while invalid_file:
     except FileNotFoundError as e:
         print("Invalid filename provided. Please enter a new file name")
         # Add logger warning call
+        logger.error(f"{e.__class__.__name__} Error {filename} file not found")
 
 print("Data intake complete.\n")
 print("Inventory listing:")

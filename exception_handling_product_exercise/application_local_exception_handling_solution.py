@@ -51,14 +51,14 @@ while invalid_file:
                 try:
                     data.append(float(components[4]))
                 except IndexError as e:
-                    print(f"No element found at position 4 (Cost price information) on line {line_count}: \"{line}\"")
+                    print(f"No element found at position 4 (Retail price information) on line {line_count}: \"{line}\"")
                     print(f"Arguments: {e.args}")
                     continue
 
                 try:
                     data.append(int(components[5]))
                 except IndexError as e:
-                    print(f"No element found at position 5 (Sales price information) on line {line_count}: \"{line}\"")
+                    print(f"No element found at position 5 (Quantity information) on line {line_count}: \"{line}\"")
                     print(f"Arguments: {e.args}")
                     continue
 
