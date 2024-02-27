@@ -80,7 +80,7 @@ class Product:
 
         return self.id_num > other.id_num
 
-    def __gt__(self, other):
+    def __ge__(self, other):
         if not isinstance(other, Product):
             return False
 
