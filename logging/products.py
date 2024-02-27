@@ -54,6 +54,38 @@ class Product:
             case _:
                 return self.__str__()
 
+    def display(self):
+        print("Product details:")
+        print(f"\tID: {self.id_num}")
+        print(f"\tCost price: {self.cost_price}")
+        print(f"\tRetail price: {self.retail_price}")
+        print(f"\tQuantity in stock: {self.qty}")
+        print(f"\tName: {self.name}")
+
+    def __lt__(self, other):
+        if not isinstance(other, Product):
+            return False
+
+        return self.id_num < other.id_num
+
+    def __le__(self, other):
+        if not isinstance(other, Product):
+            return False
+
+        return self.id_num <= other.id_num
+
+    def __gt__(self, other):
+        if not isinstance(other, Product):
+            return False
+
+        return self.id_num > other.id_num
+
+    def __gt__(self, other):
+        if not isinstance(other, Product):
+            return False
+
+        return self.id_num >= other.id_num
+
 
 class Book(Product):
     def __init__(self, id_num, name, cost_price, retail_price, qty, author, genres=None):
@@ -90,3 +122,8 @@ class Book(Product):
                         f"Genres: {self.genres}. Quantity in stock: {self.qty}")
             case _:
                 return self.__str__()
+
+    def display(self):
+        super().display()
+        print(f"\tAuthor: {self.author}")
+        print(f"\t\tGenre(s): {self.genres}")
