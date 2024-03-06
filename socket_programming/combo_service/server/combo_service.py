@@ -1,0 +1,9 @@
+HOST = "localhost"
+PORT = 11777
+
+ECHO = "ECHO"
+DAYTIME = "DAYTIME"
+STATS = "STATS"
+DELIMITER = "%%"
+
+INVALID = "INVALID"
