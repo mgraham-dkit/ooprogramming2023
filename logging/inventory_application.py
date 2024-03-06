@@ -37,7 +37,7 @@ def load(file):
                 else:
                     item = Product(id, name, cost_price, retail_price, quantity)
                 if id in inventory:
-                    raise KeyError("ID already exists")
+                    raise KeyError("ID already exists, do better >:(")
                 inventory[id] = item
             except IndexError as e:
                 # Add logger warning call
