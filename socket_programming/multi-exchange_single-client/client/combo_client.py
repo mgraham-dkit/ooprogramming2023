@@ -4,7 +4,7 @@ import socket
 
 # Define address information - IP AND port
 HOST = "localhost"
-PORT = 7878
+PORT = 11777
 
 # Create a socket
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
